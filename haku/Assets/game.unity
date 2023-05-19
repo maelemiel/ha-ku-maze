@@ -205,9 +205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_id: 0
-  left_key: 97
+  left_key: 113
   right_key: 100
-  up_key: 119
+  up_key: 122
   down_key: 115
   action_key: 304
 --- !u!4 &290900292 stripped
