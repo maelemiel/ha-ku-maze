@@ -1,24 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class HaikuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public TextMeshProUGUI displayText;
+    public string haikuText;
+    private bool displayActive = false;
+
     void Start()
     {
-
+        displayText.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (displayActive && Input.GetKeyDown(KeyCode.Return))
+        {
+            displayText.gameObject.SetActive(false);
+            displayActive = false;
+            Destroy(gameObject);
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
         GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
         gameManager.score += 1;
-        Destroy(gameObject);
+        displayText.text = haikuText;
+        displayText.gameObject.SetActive(true);
+        displayActive = true;
     }
 }
