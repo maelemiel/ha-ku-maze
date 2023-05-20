@@ -29,7 +29,7 @@ public class HaikuScript : MonoBehaviour
     {
         GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
         gameManager.score += 1;
-        displayText.text = haikuText;
+        displayText.text = haikuText.Replace("\\n", "<br>");
         displayText.gameObject.SetActive(true);
         displayActive = true;
     }
