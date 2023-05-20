@@ -90,7 +90,8 @@ namespace IndieMarc.TopDown
             {
                 //Controls
                 PlayerControls controls = PlayerControls.Get(player_id);
-                move_input = controls.GetMove();
+                if (controls)
+                    move_input = controls.GetMove();
                 
             }
 
