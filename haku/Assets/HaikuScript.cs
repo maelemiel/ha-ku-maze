@@ -9,6 +9,7 @@ public class HaikuScript : MonoBehaviour
     public TextMeshProUGUI displayText;
     public string haikuText;
     private bool displayActive = false;
+    private bool hasTriggered = false; // New variable to track if haiku has been triggered
 
     void Start()
     {
@@ -27,10 +28,14 @@ public class HaikuScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
-        gameManager.score += 1;
-        displayText.text = haikuText.Replace("\\n", "<br>");
-        displayText.gameObject.SetActive(true);
-        displayActive = true;
+        if (!hasTriggered) // Check if haiku has not been triggered before
+        {
+            GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+            gameManager.score += 1;
+            displayText.text = haikuText.Replace("\\n", "<br>");
+            displayText.gameObject.SetActive(true);
+            displayActive = true;
+            hasTriggered = true; // Set hasTriggered to true to prevent gaining points again
+        }
     }
 }
