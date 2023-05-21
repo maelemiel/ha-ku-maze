@@ -7,7 +7,7 @@ public class RotateImage : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 1f;
     [SerializeField]
-    private float targetAngle = 90f;
+    private float targetAngle = 180f;
 
     private bool isRotating = false;
     private bool isWhite = true;
