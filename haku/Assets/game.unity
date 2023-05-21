@@ -619,11 +619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 194849683}
-<<<<<<< HEAD
   countdownTime: 0
   countdownText: {fileID: 534013064}
-=======
->>>>>>> 783f3e3c3233a2cf16eeb7e8fc64f4c2ae4f21b1
 --- !u!1001 &144779962
 PrefabInstance:
   m_ObjectHideFlags: 0
