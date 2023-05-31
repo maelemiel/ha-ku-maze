@@ -1,2 +1,4 @@
 # ha-ku-maze
-haïku maze
+
+Epitech Jam #3
+one weekend to do a game
